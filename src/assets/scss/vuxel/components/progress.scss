@@ -1,0 +1,40 @@
+.progress {
+    background-color: #e9e8e8;
+    border-radius: 100px;
+    height: rem(20px);
+    margin-bottom: rem(16px);
+    overflow: hidden;
+    position: relative;
+    vertical-align: middle;
+
+    &__bar {
+        border-radius: rem(100px);
+        height: 100%;
+        left: 0;
+        line-height: 1;
+        position: absolute;
+        text-align: right;
+        top: 0;
+        transition: width 0.6s ease;
+        white-space: nowrap;
+    }
+
+    &__text {
+        display: inline-block;
+        font-size: rem(12px);
+        margin: 0 rem(5px);
+        vertical-align: middle;
+    }
+}
+
+// variations
+@each $color, $value in $theme-colors {
+    .progress--#{$color} {
+        .progress__bar {
+            @include progress-bar-variant($value);
+        }
+        .progress__text {
+            @include progress-text-variant($value);
+        }
+    }
+}

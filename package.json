@@ -1,0 +1,43 @@
+{
+    "name": "vuxel",
+    "private": false,
+    "version": "0.2.1",
+    "type": "module",
+    "files": [
+        "dist"
+    ],
+    "main": "./dist/vuxel.umd.cjs",
+    "module": "./dist/vuxel.js",
+    "exports": {
+        ".": {
+            "import": "./dist/vuxel.js",
+            "require": "./dist/vuxel.umd.cjs"
+        },
+        "./style.css": "./dist/style.css"
+    },
+    "types": "./dist/index.d.ts",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build && vue-tsc --emitDeclarationOnly",
+        "types": "vue-tsc ",
+        "preview": "vite preview",
+        "test": "vitest --run",
+        "coverage": "vitest run --coverage"
+    },
+    "dependencies": {
+        "mount-vue-component": "^0.10.2",
+        "sass": "^1.63.6",
+        "vue": "^3.3.4"
+    },
+    "devDependencies": {
+        "@types/node": "^20.4.1",
+        "@vitejs/plugin-vue": "^4.2.3",
+        "@vitest/coverage-v8": "^0.34.1",
+        "@vue/test-utils": "^2.4.1",
+        "happy-dom": "^10.9.0",
+        "typescript": "^5.0.2",
+        "vite": "^4.4.0",
+        "vitest": "^0.34.1",
+        "vue-tsc": "^1.8.3"
+    }
+}

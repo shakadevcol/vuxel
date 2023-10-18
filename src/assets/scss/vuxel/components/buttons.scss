@@ -1,0 +1,43 @@
+.btn {
+    background-color: transparent;
+    border: $btn-border-width solid transparent;
+    border-radius: rem(4px);
+    color: $body-color;
+    cursor: pointer;
+    display: inline-block;
+
+    display: inline-block;
+    font-family: $btn-font-family;
+    font-size: rem(16px);
+    font-weight: $btn-font-weight;
+    font-weight: 400;
+    line-height: $btn-line-height;
+    line-height: 1.5;
+    margin: rem(4px) rem(2px);
+    padding: rem(6px) rem(12px);
+    padding: rem(10px);
+    text-align: center;
+    text-align: center;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    vertical-align: middle;
+
+    &:hover {
+        color: $body-color;
+    }
+
+    &:disabled,
+    &.disabled,
+    fieldset:disabled & {
+        opacity: $btn-disabled-opacity;
+        pointer-events: none;
+    }
+}
+
+// variations
+@each $color, $value in $theme-colors {
+    .btn--#{$color} {
+        @include button-variant($value, $value);
+    }
+}

@@ -1,0 +1,28 @@
+@mixin notification-variant($background, $border) {
+    background-color: mix($white, $background, 20%);
+    border-left: 8px solid $border;
+    /*  color: set-color-depending-lightness($background);
+    &:hover {
+        background-color: mix($black, $background, 15);
+        border-color: mix($black, $background, 15);
+
+        color: set-color-depending-lightness($background);
+    } */
+}
+
+@mixin notification-icon-variant($color) {
+    fill: mix($black, $color, 30%);
+    //fill: set-color-depending-lightness($color);
+}
+
+@mixin notification-message-variant($color) {
+    color: set-color-depending-lightness($color);
+}
+
+@mixin notification-close-btn-variant($color) {
+    background-color: mix($white, $color, 30%);
+}
+
+@mixin notification-close-btn-hover-variant($color) {
+    background-color: mix($white, $color, 40%);
+}

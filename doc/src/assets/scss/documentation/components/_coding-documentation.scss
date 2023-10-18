@@ -1,0 +1,55 @@
+.coding-documentation {
+    margin: 0 0 rem(20px) 0;
+    &__header {
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        display: flex;
+        justify-content: right;
+        padding: rem(10px);
+    }
+    &__list {
+        display: flex;
+        margin: 0;
+    }
+    &__list-item {
+        align-items: center;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px,
+            rgba(0, 0, 0, 0.14) 0px 4px 5px, rgba(0, 0, 0, 0.12) 0px 1px 10px;
+        cursor: default;
+        display: flex;
+        font-size: rem(14px);
+        justify-content: center;
+        margin-right: rem(10px);
+        padding: rem(7px);
+        -webkit-transition: all 0.25s ease;
+        transition: all 0.25s ease;
+
+        &:hover {
+            background-color: #f1f1f1;
+        }
+    }
+    &__list-link {
+        align-items: center;
+        display: flex;
+        text-decoration: none;
+    }
+    &__list-img {
+        height: rem(30px);
+        margin-right: 10px;
+    }
+    &__example {
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        border-top: 0;
+        padding: rem(20px);
+    }
+    &__code {
+        height: 0;
+        /* visibility: hidden; */
+        /* display: none; */
+        overflow: hidden;
+        transition: all 0.25s;
+        /* pre {
+            transition: all 0.25s;
+        } */
+    }
+}

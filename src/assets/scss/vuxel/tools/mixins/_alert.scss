@@ -1,0 +1,17 @@
+@mixin alert-variant($background, $border) {
+    background-color: $background;
+    border: tint-color($background, 60%);
+}
+
+@mixin alert-message-variant($background) {
+    color: set-color-depending-lightness($background);
+}
+
+@mixin alert-icon-variant($color) {
+    @if (lightness($color) > 20) {
+        fill: shade-color($color, 35%);
+    } @else {
+        //fill: red;
+        fill: tint-color($color, 35%);
+    }
+}

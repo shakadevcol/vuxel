@@ -1,0 +1,52 @@
+.container {
+    /* display: flex; */
+    padding: 0 rem(10px) 0 rem(10px);
+}
+
+.content {
+    display: block;
+    padding-bottom: rem(32px);
+    padding-top: rem(80px);
+    text-align: left;
+}
+@media only screen and (min-width: 762px) {
+    .content {
+        padding-left: rem(350px);
+    }
+}
+
+.content-section {
+    margin-top: rem(20px);
+}
+
+.heading {
+    color: mix(white, $purple-color, 20%);
+    letter-spacing: normal;
+    line-height: rem(50px);
+    margin-bottom: rem(20px);
+    text-decoration: none;
+
+    &--h1 {
+        font-size: rem(48px);
+    }
+
+    &--h2 {
+        font-size: rem(28px);
+        line-height: rem(28px);
+    }
+    &--h3 {
+        color: $text-color;
+        font-size: rem(32px);
+        line-height: rem(34px);
+    }
+}
+
+.code-snippet {
+    background-color: #f5f7fa;
+    padding: rem(4px);
+}
+
+pre[class*="language-"] {
+    padding: 0;
+    /* border: 1px solid black; */
+}

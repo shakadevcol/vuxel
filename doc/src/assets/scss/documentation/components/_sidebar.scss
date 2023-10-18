@@ -1,0 +1,41 @@
+.sidebar-menu {
+    background-color: $sidebar-background-color;
+    border-right: rem(1px) solid $sidebar-border-color;
+    bottom: 0;
+    box-sizing: border-box;
+    display: none;
+    font-size: rem(16px);
+    left: 0;
+    margin: 0;
+    overflow-y: auto;
+    padding: rem(20px) rem(20px) 0 rem(20px);
+    position: fixed;
+    text-align: left;
+    top: rem(57px);
+    width: rem(320px);
+    z-index: 10;
+
+    &__list {
+        margin: 0;
+        padding: 0;
+    }
+    &__list-item {
+        list-style: none;
+        margin: rem(10px) 0 rem(10px) 0;
+        text-align: left;
+    }
+    &__list-link {
+        color: black;
+        font-size: rem(14px);
+        text-decoration: none;
+        &:hover {
+            color: $purple-color;
+        }
+    }
+}
+
+@media only screen and (min-width: 762px) {
+    .sidebar-menu {
+        display: block;
+    }
+}

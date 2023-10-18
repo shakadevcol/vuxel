@@ -1,0 +1,11 @@
+// Clear units
+@function stripUnits($number) {
+    $unit: calc($number * 0) + 1;
+    @return calc($number / $unit);
+}
+
+// Convert to rem
+@function rem($value) {
+    $remValue: calc(stripUnits($value) / stripUnits($html-font-size)) + rem;
+    @return $remValue;
+}

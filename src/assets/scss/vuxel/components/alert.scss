@@ -1,0 +1,33 @@
+.alert {
+    border-radius: rem(6px);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: rem(16px);
+    padding: rem(16px);
+    position: relative;
+
+    &__close-btn {
+        cursor: pointer;
+    }
+    &__close-svg {
+        height: rem(15px);
+        width: rem(15px);
+    }
+}
+
+// variations
+@each $color, $value in $theme-colors {
+    .alert--#{$color} {
+        @include alert-variant($value, $value);
+
+        .alert__message {
+            @include alert-message-variant($value);
+        }
+
+        .alert__close-svg {
+            polygon {
+                @include alert-icon-variant($value);
+            }
+        }
+    }
+}

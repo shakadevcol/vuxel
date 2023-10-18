@@ -1,0 +1,31 @@
+{
+    "name": "vuxel-doc",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build && vue-tsc",
+        "types": "vue-tsc ",
+        "preview": "vite preview",
+        "test": "vitest --run",
+        "coverage": "vitest run --coverage"
+    },
+    "dependencies": {
+        "mount-vue-component": "^0.10.2",
+        "prismjs": "^1.29.0",
+        "sass": "^1.63.6",
+        "vue": "^3.3.4",
+        "vue-router": "^4.2.4"
+    },
+    "devDependencies": {
+        "@types/node": "^20.4.1",
+        "@vitejs/plugin-vue": "^4.2.3",
+        "@vitest/coverage-v8": "^0.34.1",
+        "@vue/test-utils": "^2.4.1",
+        "happy-dom": "^10.9.0",
+        "typescript": "^5.0.2",
+        "vite": "^4.4.0",
+        "vitest": "^0.34.1",
+        "vue-tsc": "^1.8.3"
+    }
+}

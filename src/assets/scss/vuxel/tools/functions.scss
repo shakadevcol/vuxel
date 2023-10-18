@@ -1,0 +1,31 @@
+// Clear units
+@function stripUnits($number) {
+    $unit: calc($number * 0) + 1;
+    @return calc($number / $unit);
+}
+
+// Convert to rem
+@function rem($value) {
+    $remValue: calc(stripUnits($value) / stripUnits($html-font-size)) + rem;
+    @return $remValue;
+}
+
+// Tint a color: mix a color with white
+@function tint-color($color, $weight) {
+    @return mix(white, $color, $weight);
+}
+
+// Shade a color: mix a color with black
+@function shade-color($color, $weight) {
+    @return mix(black, $color, $weight);
+}
+
+@function set-color-depending-lightness($color) {
+    @if (lightness($color) > 60) {
+        //@return #000;
+        @return shade-color($color, 85%);
+    } @else {
+        //@return mix($white, $color, 85%);
+        @return tint-color($color, 85%);
+    }
+}

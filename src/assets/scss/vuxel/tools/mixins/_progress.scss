@@ -1,0 +1,6 @@
+@mixin progress-bar-variant($background) {
+    background-color: $background;
+}
+@mixin progress-text-variant($background) {
+    color: set-color-depending-lightness($background);
+}

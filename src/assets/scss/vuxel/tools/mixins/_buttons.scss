@@ -1,0 +1,11 @@
+@mixin button-variant($background, $border) {
+    background-color: $background;
+    border-color: $border;
+    color: set-color-depending-lightness($background);
+    &:hover {
+        background-color: mix($black, $background, 15%);
+        border-color: mix($black, $background, 15%);
+
+        color: set-color-depending-lightness($background);
+    }
+}

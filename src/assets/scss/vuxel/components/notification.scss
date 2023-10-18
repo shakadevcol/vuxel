@@ -1,0 +1,146 @@
+.notifications-container {
+    height: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 100;
+}
+
+.notification {
+    &__card {
+        align-items: center;
+        border-radius: rem(4px);
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: rem(20px);
+        max-width: rem(350px);
+        opacity: 1;
+        overflow: hidden;
+        position: relative;
+        right: 0;
+        top: rem(10px);
+    }
+
+    &__card--displayed {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    &__icon {
+        height: rem(30px);
+        padding: 0 rem(10px) 0 rem(10px);
+
+        svg {
+            height: rem(30px);
+            width: rem(30px);
+        }
+    }
+
+    &__message {
+        font-size: rem(18px);
+        padding: rem(10px);
+    }
+
+    &__close-btn {
+        cursor: pointer;
+        padding: rem(20px) rem(18px);
+    }
+    &__close-svg {
+        height: rem(15px);
+        width: rem(15px);
+    }
+}
+@media only screen and (min-width: 762px) {
+    .notification {
+        &__card {
+            max-width: rem(450px);
+        }
+    }
+}
+
+@keyframes bounceInRight {
+    from,
+    60%,
+    75%,
+    90%,
+    to {
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+    from {
+        opacity: 0;
+        transform: translate3d(rem(3000px), 0, 0) scaleX(3);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translate3d(rem(-25px), 0, 0) scaleX(1);
+    }
+
+    75% {
+        transform: translate3d(rem(10px), 0, 0) scaleX(0.98);
+    }
+
+    90% {
+        transform: translate3d(rem(-5px), 0, 0) scaleX(0.995);
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.bounceInRight {
+    animation-name: bounceInRight;
+}
+
+@keyframes bounceOutRight {
+    20% {
+        opacity: 1;
+        transform: translate3d(rem(-20px), 0, 0) scaleX(0.9);
+    }
+
+    to {
+        opacity: 0;
+        transform: translate3d(rem(2000px), 0, 0) scaleX(2);
+    }
+}
+
+.bounceOutRight {
+    animation-name: bounceOutRight;
+}
+
+.animated {
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+}
+
+// variations
+@each $color, $value in $theme-colors {
+    .notification-#{$color} {
+        @include notification-variant($value, $value);
+
+        .notification__icon {
+            svg {
+                @include notification-icon-variant($value);
+            }
+        }
+
+        .notification__message {
+            @include notification-message-variant($value);
+        }
+
+        .notification__close-btn {
+            @include notification-close-btn-variant($value);
+
+            &:hover {
+                @include notification-close-btn-hover-variant($value);
+            }
+        }
+        .notification__close-svg {
+            polygon {
+                @include notification-icon-variant($value);
+            }
+        }
+    }
+}
